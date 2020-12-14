@@ -1,6 +1,80 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700&display=swap');
+  
+$background: #f8f8f8
+$primary: #221f6d
+$secondary: #e4e3f5
+$detail: #9d9ae6
+$text: #3b389c
+  
 body
   padding: 50px
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif
+  font: 14px "Roboto", Helvetica, Arial, sans-serif
+  background-color: $background
+  color: $text
 
-a
-  color: #00B7FF
+h1
+  color: $primary
+
+.btn
+  text-decoration: none
+  color: $primary
+  border: 2px solid $primary
+  background: none
+  border-radius: 3px
+  padding: 4px 8px
+  margin-bottom: 12px
+
+  transition: 400ms
+
+  &:hover 
+    color: $background
+    background-color: $primary
+    border-color: $primary
+
+ul
+  margin-top: 30px
+  padding: 0 0 0 30px
+
+.msg
+  display: flex
+  flex-direction: column
+  width: 400px
+  box-shadow: 7px 7px 13px -4px #221F6D
+  border-radius: 3px
+  margin-top: 10px
+  padding: 10px
+
+  transition: 400ms
+
+  &:hover 
+    margin-left: 10px
+
+  div 
+    display: flex
+    width: 100%
+    justify-content: space-between
+    align-items: center
+
+    span
+      color: $detail
+      font-size: 12px
+
+form
+  display: flex
+  flex-direction: column
+  width: 400px
+  align-items: center
+  
+  input, textarea
+    width: 100%
+    padding: 3px 6px
+    margin-bottom: 8px
+
+  textarea
+      min-height: 80px
+      max-width: 100%
+      min-width: 100%
+
+  .btn
+    color: $primary
+    font-weight: 600

@@ -6,18 +6,23 @@ const messages = [
   {
     text: "Hi there!",
     user: "Amando",
-    added: dateFns.format(new Date(), "dd/MMM/y '-' hh:mm:ss"),
+    added: new Date(),
   },
   {
     text: "Hello World!",
     user: "Charles",
-    added: dateFns.format(new Date(), "dd/MMM/y '-' hh:mm:ss"),
+    added: new Date(),
   },
 ];
 
 /* GET home page. */
 router.get("/", function (req, res, next) {
-  res.render("index", { title: "Mini Messaging Board", messages: messages });
+  res.render("index", {
+    title: "Mini Messaging Board",
+    messages: messages.map((msg) => {
+      return { ...msg, time: dateFns.formatDistanceToNow(msg.added) };
+    }),
+  });
 });
 
 /* POST new page. */
@@ -26,7 +31,7 @@ router.post("/new", function (req, res, next) {
   messages.push({
     text: newMsg.text,
     user: newMsg.author,
-    added: dateFns.format(new Date(), "dd/MMM/y '-' hh:mm:ss"),
+    added: new Date(),
   });
 
   res.redirect("/");

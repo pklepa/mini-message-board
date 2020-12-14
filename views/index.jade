@@ -2,9 +2,14 @@ extends layout
 
 block content
   h1= title
-  p Welcome to #{title}
-  ul
-    each item in messages
-      li #{item.added} - #{item.user}: #{item.text}
 
-  a(href="/new") Add a new message
+  a(href="/new" class="btn") Add a new message
+
+  ul(class="msgs-container")
+    each item in messages
+      li(class="msg")
+        div
+          strong #{item.user}
+          span #{item.time} ago
+        p #{item.text}
+

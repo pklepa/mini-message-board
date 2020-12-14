@@ -4,6 +4,6 @@ block content
   h1= title
   p Welcome to #{title}
   form(action="/new", method="post")
-    input(name="text", type="text", placeholder="Say something")
     input(name="author", type="text", placeholder="Your name")
-    button(type="submit") Send
+    textarea(name="text", type="text", placeholder="Say something")
+    button(class="btn" type="submit") Send
